@@ -2284,9 +2284,9 @@ CMplot <- function(
                 if(is.null(ylim)){
                     Pmap.min_no_na <- Pmap[,3:(R+2)]
                     YlimMax <- max_no_na(c(floor(max_no_na(c(max_no_na(-log10(c05)), max_no_na(-log10(c95))))+1), -log10(min_no_na(Pmap.min_no_na[Pmap.min_no_na > 0]))))
-                    plot(NULL, xlim=c(0,floor(max_no_na(log.Quantiles.max_no_na)+1)), axes=FALSE, xlab="", ylab="", cex.axis=axis.cex, cex.lab=lab.cex,ylim=c(0, floor(YlimMax+1)), main = "QQplot", cex.main=main.cex, font.main=main.font)
+                    plot(NULL, xlim=c(0,floor(max_no_na(log.Quantiles.max_no_na)+1)), axes=FALSE, xlab="", ylab="", cex.axis=axis.cex, cex.lab=lab.cex,ylim=c(0, floor(YlimMax+1)), main = main, cex.main=main.cex, font.main=main.font)
                 }else{
-                    plot(NULL, xlim=c(0,floor(max_no_na(log.Quantiles.max_no_na)+1)), axes=FALSE, xlab="", ylab="", cex.axis=axis.cex, cex.lab=lab.cex,ylim=c(0, max(unlist(ylim))),main = "QQplot", cex.main=main.cex, font.main=main.font)
+                    plot(NULL, xlim=c(0,floor(max_no_na(log.Quantiles.max_no_na)+1)), axes=FALSE, xlab="", ylab="", cex.axis=axis.cex, cex.lab=lab.cex,ylim=c(0, max(unlist(ylim))),main = main, cex.main=main.cex, font.main=main.font)
                 }
                 legend("topleft",trait,col=rgb(t(col2rgb(t(col)[1:R])), alpha=points.alpha, maxColorValue=255),pch=19,cex=legend.cex,text.font=6,box.col=NA, xpd=TRUE)
                 axis(1, mgp=c(3,xticks.pos,0), at=seq(0,floor(max_no_na(log.Quantiles.max_no_na)+1),ceiling((max_no_na(log.Quantiles.max_no_na)+1)/10)), lwd=axis.lwd,labels=seq(0,floor(max_no_na(log.Quantiles.max_no_na)+1),ceiling((max_no_na(log.Quantiles.max_no_na)+1)/10)), cex.axis=axis.cex)
